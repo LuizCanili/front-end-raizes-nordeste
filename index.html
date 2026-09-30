@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Acesso</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="hero-section">
+        <div class="card-central">
+            <img src="img/logo.png" alt="Logo Raízes do Nordeste" class="logo-gigante">
+            
+            <p style="margin-bottom: 1.5rem; color: #555;">Identifique-se para iniciar o seu pedido.</p>
+            
+            <form id="form-login" onsubmit="iniciarPedido(event)">
+                <!-- Eventos adicionados para validar em tempo real -->
+                <input type="text" id="cpf" class="input-padrao" placeholder="Seu CPF (Apenas números)" oninput="validarLogin()" required>
+                <input type="email" id="email" class="input-padrao" placeholder="Seu E-mail" oninput="validarLogin()" required>
+
+                <div class="grupo-checkbox">
+                    <input type="checkbox" id="lgpd" onchange="validarLogin()" required>
+                    <label for="lgpd">Li e concordo com o uso dos meus dados para o processamento deste pedido, conforme a LGPD.</label>
+                </div>
+
+                <!-- Botão começa desativado (cinza) -->
+                <button type="submit" id="btn-login" class="btn-primario" disabled>Iniciar Pedido</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

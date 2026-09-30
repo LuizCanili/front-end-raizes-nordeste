@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Cardápio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+        <img src="img/logo.png" alt="Raízes do Nordeste" class="logo-mini">
+        <div class="carrinho-resumo">🛒 Total: <span id="valor-total">R$ 0,00</span></div>
+    </header>
+
+    <main class="container-cardapio">
+        <div class="card-fundo-branco">
+            <h2 class="titulo-secao">Nosso Cardápio</h2>
+            
+            <div class="abas-categorias">
+                <button class="btn-aba ativo" onclick="filtrarCategoria('todos', this)">Todos</button>
+                <button class="btn-aba" onclick="filtrarCategoria('lanches', this)">Lanches</button>
+                <button class="btn-aba" onclick="filtrarCategoria('bebidas', this)">Bebidas</button>
+                <button class="btn-aba" onclick="filtrarCategoria('sobremesas', this)">Sobremesas</button>
+            </div>
+
+            <div id="grade-produtos" class="grade-produtos"></div>
+            
+            <div class="acoes-pedido">
+                <button id="btn-finalizar" class="btn-primario" onclick="window.location.href='pagamento.html'" disabled>Avançar para Pagamento</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

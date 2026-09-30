@@ -1,0 +1,68 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { 
+    background-color: #e9ecef; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+.cabecalho-principal { 
+    background-color: rgba(255, 107, 0, 0.95); 
+    color: white; 
+    padding: 1rem 2rem; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo-mini { height: 45px; width: auto; object-fit: contain; }
+.logo-gigante { width: 100%; max-width: 280px; height: auto; margin: 0 auto 1.5rem auto; display: block; object-fit: contain; }
+.carrinho-resumo { font-weight: bold; font-size: 1.2rem; }
+
+.hero-section { flex: 1; display: flex; justify-content: center; align-items: center; padding: 1rem; }
+.card-central { background-color: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 100%; max-width: 450px; text-align: center; }
+.card-central h1, .card-central h2 { margin-bottom: 0.5rem; color: #ff6b00; }
+.card-central p { margin-bottom: 1.5rem; color: #666; }
+
+.input-padrao { width: 100%; padding: 0.8rem; margin-bottom: 1.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+
+.btn-primario { width: 100%; padding: 1rem; background-color: #28a745; color: white; border: none; border-radius: 4px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background-color 0.3s; }
+.btn-primario:hover { background-color: #218838; }
+.btn-primario:disabled { background-color: #ccc; cursor: not-allowed; }
+
+.btn-secundario { width: 100%; padding: 1rem; background-color: #6c757d; color: white; border: none; border-radius: 4px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background-color 0.3s; }
+.btn-secundario:hover { background-color: #5a6268; }
+
+.container-cardapio { padding: 2rem; max-width: 1200px; margin: 0 auto; width: 100%; }
+.card-fundo-branco { background-color: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.titulo-secao { color: #ff6b00; margin-bottom: 2rem; text-align: center; }
+
+.abas-categorias { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.btn-aba { padding: 0.5rem 1.5rem; border: 2px solid #ff6b00; background-color: white; color: #ff6b00; border-radius: 20px; font-weight: bold; cursor: pointer; transition: all 0.3s; }
+.btn-aba:hover, .btn-aba.ativo { background-color: #ff6b00; color: white; }
+
+.grade-produtos { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.cartao-produto { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #eee; }
+.img-produto { width: 100%; height: 150px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem; }
+.cartao-produto h3 { color: #333; margin-bottom: 0.5rem; }
+.cartao-produto p.descricao { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+.cartao-produto p.preco { font-weight: bold; color: #ff6b00; font-size: 1.2rem; margin-bottom: 1rem; }
+
+.acoes-pedido { text-align: center; margin-top: 2rem; }
+.cartao-checkout { text-align: left; max-width: 500px; }
+.grupo-checkbox { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.9rem; color: #555; }
+.grupo-checkbox input { margin-top: 0.2rem; cursor: pointer; }
+.mensagem-status { text-align: center; margin-top: 1rem; font-weight: bold; color: #ff6b00; }
+
+.resumo-carrinho-checkout { background-color: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; }
+.lista-resumo-mini { list-style-type: none; max-height: 200px; overflow-y: auto; }
+.item-resumo-mini { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px dashed #ccc; }
+.img-mini { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; }
+.detalhes-mini { flex: 1; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: #333; }

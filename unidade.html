@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Unidade</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+        <img src="img/logo.png" alt="Raízes do Nordeste" class="logo-mini">
+    </header>
+
+    <main class="hero-section">
+        <div class="card-central">
+            <h2>Onde você está?</h2>
+            <p>Selecione a unidade para carregar o cardápio local:</p>
+            
+            <select id="seletor-unidade" class="input-padrao">
+                <option value="" disabled selected>Escolha uma loja...</option>
+                <option value="recife">Recife (Matriz)</option>
+                <option value="caruaru">Caruaru</option>
+                <option value="joao-pessoa">João Pessoa</option>
+            </select>
+
+            <button class="btn-primario" onclick="window.location.href='cardapio.html'">Acessar Cardápio</button>
+        </div>
+    </main>
+</body>
+</html>

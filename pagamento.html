@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Checkout</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+        <img src="img/logo.png" alt="Raízes do Nordeste" class="logo-mini">
+    </header>
+
+    <main class="hero-section">
+        <div class="card-central cartao-checkout">
+            <h2>Pagamento</h2>
+
+            <div class="resumo-carrinho-checkout">
+                <h3 style="margin-bottom: 1rem; color: #333; font-size: 1.1rem; border-bottom: 1px solid #ccc; padding-bottom: 0.5rem;">Seu Pedido</h3>
+                <ul id="lista-resumo-pagamento" class="lista-resumo-mini"></ul>
+                <h3 style="margin-top: 1rem; text-align: right; color: #28a745;">Total: <span id="total-pagamento">R$ 0,00</span></h3>
+            </div>
+            
+            <form id="form-pagamento" onsubmit="processarPagamento(event)">
+                <div class="grupo-checkbox">
+                    <!-- Evento onchange recalcula o valor na hora -->
+                    <input type="checkbox" id="fidelidade" onchange="atualizarTotalPagamento()">
+                    <label for="fidelidade">Utilizar saldo de fidelidade <strong>(Desconto de R$ 10,00)</strong></label>
+                </div>
+
+                <!-- Evento onchange libera o botão -->
+                <select id="metodo-pagamento" class="input-padrao" onchange="validarPagamento()" required>
+                    <option value="" disabled selected>Escolha a Forma de Pagamento...</option>
+                    <option value="pix">PIX</option>
+                    <option value="cartao">Cartão de Crédito</option>
+                    <option value="debito">Cartão de Débito</option>
+                </select>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="button" class="btn-secundario" onclick="window.location.href='cardapio.html'">Voltar</button>
+                    <!-- Botão começa desativado (cinza) -->
+                    <button type="submit" id="btn-pagar" class="btn-primario" disabled>Confirmar e Pagar</button>
+                </div>
+                
+                <p id="mensagem-status" class="mensagem-status"></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
