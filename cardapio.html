@@ -9,7 +9,11 @@
 <body>
     <header class="cabecalho-principal">
         <img src="img/logo.png" alt="Raízes do Nordeste" class="logo-mini">
-        <div class="carrinho-resumo">🛒 Total: <span id="valor-total">R$ 0,00</span></div>
+        
+        <!-- Botão melhorado: texto mais claro e com ID para ser ativado/desativado pelo JS -->
+        <button id="btn-sacola-header" class="btn-ver-sacola" onclick="window.location.href='pagamento.html'" disabled>
+            🛒 Ver Carrinho ➔ <span id="sacola-resumo">0 itens | R$ 0,00</span>
+        </button>
     </header>
 
     <main class="container-cardapio">
@@ -25,9 +29,7 @@
 
             <div id="grade-produtos" class="grade-produtos"></div>
             
-            <div class="acoes-pedido">
-                <button id="btn-finalizar" class="btn-primario" onclick="window.location.href='pagamento.html'" disabled>Avançar para Pagamento</button>
-            </div>
+            <!-- O botão redundante do final da página foi totalmente removido daqui -->
         </div>
     </main>
 
