@@ -460,9 +460,9 @@ body {
     }
 
     .btn-ver-sacola {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.8rem;
-        max-width: 70%;
+        padding: 0.35rem 0.5rem; /* Diminui um pouco o preenchimento interno */
+        font-size: 0.75rem; /* Reduz a fonte levemente para caber todo o texto */
+        max-width: 85%; /* Aumenta o limite de largura de 70% para 85% */
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
