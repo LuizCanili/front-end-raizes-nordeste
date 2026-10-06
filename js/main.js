@@ -212,15 +212,28 @@ function carregarResumoFinal() {
     const itensSalvos = JSON.parse(localStorage.getItem('resumoPedido')) || [];
     let totalPago = 0;
 
+    listaResumo.innerHTML = '';
+
     itensSalvos.forEach(item => {
         const qtd = item.quantidade || 1;
         const valorItem = item.preco * qtd;
         totalPago += valorItem;
-        listaResumo.innerHTML += `<li>${qtd}x ${item.nome} - <strong>R$ ${valorItem.toFixed(2).replace('.', ',')}</strong></li>`;
+
+        listaResumo.innerHTML += `
+            <li class="item-recibo">
+                <span class="nome-recibo">${qtd}x ${item.nome} -</span>
+                <strong class="preco-recibo">R$ ${valorItem.toFixed(2).replace('.', ',')}</strong>
+            </li>
+        `;
     });
 
     if (localStorage.getItem('usaFidelidade') === 'true') {
-        listaResumo.innerHTML += `<li style="color: #ff6b00; margin-top: 0.5rem;">Desconto Fidelidade <strong>- R$ 10,00</strong></li>`;
+        listaResumo.innerHTML += `
+            <li class="item-recibo desconto-recibo">
+                <span class="nome-recibo">Desconto Fidelidade -</span>
+                <strong class="preco-recibo">R$ 10,00</strong>
+            </li>
+        `;
         totalPago -= 10.00;
         if (totalPago < 0) totalPago = 0;
     }
