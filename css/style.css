@@ -156,6 +156,21 @@ body {
     background-color: #5a6268; 
 }
 
+/* NOVO: Grupo de botões dividindo a tela 50/50 na tela de pagamento */
+.botoes-acao {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+.botoes-acao button {
+    flex: 1; /* Ocupam exatamente o mesmo espaço */
+    padding: 1rem 0.5rem; 
+    font-size: 1rem;
+    white-space: normal;
+    line-height: 1.2;
+}
+
 /* === CARDÁPIO E FILTROS STICKY === */
 .container-cardapio { 
     padding: 2rem; 
@@ -431,7 +446,7 @@ body {
     color: #ff6b00;
 }
 
-/* === RESPONSIVIDADE MOBILE === */
+/* === RESPONSIVIDADE MOBILE (TELAS MENORES QUE 480PX) === */
 @media (max-width: 480px) {
     .cabecalho-principal { 
         padding: 0.5rem 0.8rem; 
@@ -453,14 +468,28 @@ body {
         text-overflow: ellipsis;
     }
 
+    /* Correção: Forçar o layout em grid com 2 colunas para nunca quebrar para uma 3ª linha */
     .abas-categorias { 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         top: 60px; 
-        padding: 0.5rem 0.2rem;
-        gap: 0.4rem;
+        padding: 0.5rem;
+        gap: 0.5rem;
     }
 
     .btn-aba { 
-        padding: 0.35rem 0.7rem; 
-        font-size: 0.8rem; 
+        width: 100%;
+        padding: 0.4rem 0; 
+        font-size: 0.85rem; 
+    }
+
+    /* Correção: Diminuir espaçamentos dos botões na tela de pagamento */
+    .botoes-acao {
+        gap: 0.5rem;
+    }
+
+    .botoes-acao button {
+        font-size: 0.85rem;
+        padding: 0.8rem 0.2rem;
     }
 }
