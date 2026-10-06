@@ -221,7 +221,7 @@ function carregarResumoFinal() {
 
         listaResumo.innerHTML += `
             <li class="item-recibo">
-                <span class="nome-recibo">${qtd}x ${item.nome} -</span>
+                <span class="nome-recibo">${qtd}x ${item.nome}</span>
                 <strong class="preco-recibo">R$ ${valorItem.toFixed(2).replace('.', ',')}</strong>
             </li>
         `;
@@ -230,8 +230,8 @@ function carregarResumoFinal() {
     if (localStorage.getItem('usaFidelidade') === 'true') {
         listaResumo.innerHTML += `
             <li class="item-recibo desconto-recibo">
-                <span class="nome-recibo">Desconto Fidelidade -</span>
-                <strong class="preco-recibo">R$ 10,00</strong>
+                <span class="nome-recibo">Desconto Fidelidade</span>
+                <strong class="preco-recibo">- R$ 10,00</strong>
             </li>
         `;
         totalPago -= 10.00;

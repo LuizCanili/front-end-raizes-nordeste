@@ -48,7 +48,7 @@ body {
     object-fit: contain; 
 }
 
-/* === BOTÃO DO CARRINHO (COMPACTO NO MOBILE) === */
+/* === BOTÃO DO CARRINHO === */
 .btn-ver-sacola {
     background-color: white;
     color: #ff6b00;
@@ -429,4 +429,38 @@ body {
 .desconto-recibo .nome-recibo, 
 .desconto-recibo .preco-recibo {
     color: #ff6b00;
+}
+
+/* === RESPONSIVIDADE MOBILE === */
+@media (max-width: 480px) {
+    .cabecalho-principal { 
+        padding: 0.5rem 0.8rem; 
+        min-height: 60px;
+        gap: 0.5rem;
+    }
+
+    .logo-mini { 
+        height: 50px; 
+        flex-shrink: 0;
+    }
+
+    .btn-ver-sacola {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+        max-width: 70%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .abas-categorias { 
+        top: 60px; 
+        padding: 0.5rem 0.2rem;
+        gap: 0.4rem;
+    }
+
+    .btn-aba { 
+        padding: 0.35rem 0.7rem; 
+        font-size: 0.8rem; 
+    }
 }
