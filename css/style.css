@@ -171,7 +171,7 @@ body {
     line-height: 1.2;
 }
 
-/* === CARDÁPIO E FILTROS STICKY === */
+/* === CARDÁPIO E FILTROS === */
 .container-cardapio { 
     padding: 2rem; 
     max-width: 1200px; 
@@ -269,7 +269,7 @@ body {
     margin-bottom: 1rem; 
 }
 
-/* === TELA DE SACOLA E CHECKOUT === */
+/* === TELA DE CARRINHO E CHECKOUT === */
 .cartao-checkout { 
     text-align: left; 
 }
@@ -419,7 +419,7 @@ body {
     border-radius: 4px; 
 }
 
-/* === TELA DE SUCESSO (RECIBO DUPLA LINHA) === */
+/* === TELA DE SUCESSO === */
 .item-recibo {
     display: flex;
     flex-direction: column;
@@ -446,7 +446,7 @@ body {
     color: #ff6b00;
 }
 
-/* === RESPONSIVIDADE MOBILE (TELAS MENORES QUE 480PX) === */
+/* === RESPONSIVIDADE MOBILE === */
 @media (max-width: 480px) {
     .cabecalho-principal { 
         padding: 0.5rem 0.8rem; 
@@ -483,7 +483,6 @@ body {
         font-size: 0.85rem; 
     }
 
-    /* Correção: Diminuir espaçamentos dos botões na tela de pagamento */
     .botoes-acao {
         gap: 0.5rem;
     }
