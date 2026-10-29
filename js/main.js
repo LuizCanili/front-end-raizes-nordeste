@@ -17,14 +17,29 @@ function iniciarPedido(event) {
     window.location.href = 'unidade.html';
 }
 
+function confirmarUnidade(event) {
+    event.preventDefault();
+    const seletor = document.getElementById('seletor-unidade');
+    if (seletor && seletor.value) {
+        localStorage.setItem('lojaSelecionada', seletor.value);
+        window.location.href = 'cardapio.html';
+    }
+}
+
 function carregarCardapio(categoria = 'todos') {
     const grade = document.getElementById('grade-produtos');
     if (!grade) return; 
 
     grade.innerHTML = ''; 
     
-    // Cria uma cópia da lista e aplica o filtro (se houver)
-    let produtosFiltrados = categoria === 'todos' ? [...produtos] : produtos.filter(p => p.categoria === categoria);
+    // Recupera a loja selecionada (se não houver, mostra de 'todas' por segurança)
+    const lojaAtual = localStorage.getItem('lojaSelecionada') || 'todas';
+
+    // Filtra primeiro pela loja (mostra itens gerais + exclusivos da unidade)
+    let produtosLoja = produtos.filter(p => p.loja === 'todas' || p.loja === lojaAtual);
+
+    // Depois aplica o filtro de categoria (lanches, bebidas, sobremesas)
+    let produtosFiltrados = categoria === 'todos' ? [...produtosLoja] : produtosLoja.filter(p => p.categoria === categoria);
 
     // Ordena os produtos em ordem alfabética (A-Z) pelo nome
     produtosFiltrados.sort((a, b) => a.nome.localeCompare(b.nome));
@@ -33,7 +48,7 @@ function carregarCardapio(categoria = 'todos') {
         const cartao = document.createElement('div');
         cartao.className = 'cartao-produto';
         cartao.innerHTML = `
-            <img src="${produto.imagem}" alt="${produto.nome}" class="img-produto">
+            <img src="${produto.imagem}" alt="${produto.nome}" class="img-produto" onerror="this.src='https://placehold.co/250x150/ff6b00/white?text=Sem+Imagem'">
             <h3>${produto.nome}</h3>
             <p class="descricao">${produto.descricao}</p>
             <p class="preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</p>
@@ -149,7 +164,7 @@ function carregarResumoPagamento() {
         lista.innerHTML += `
             <li class="item-resumo-mini">
                 <div class="item-topo">
-                    <img src="${item.imagem}" alt="${item.nome}" class="img-mini">
+                    <img src="${item.imagem}" alt="${item.nome}" class="img-mini" onerror="this.src='https://placehold.co/50x50/ff6b00/white?text=Img'">
                     <div class="info-produto">
                         <span>${item.nome}</span>
                         <span>R$ ${totalItem.toFixed(2).replace('.', ',')}</span>
