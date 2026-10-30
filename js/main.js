@@ -32,16 +32,12 @@ function carregarCardapio(categoria = 'todos') {
 
     grade.innerHTML = ''; 
     
-    // Recupera a loja selecionada (se não houver, mostra de 'todas' por segurança)
     const lojaAtual = localStorage.getItem('lojaSelecionada') || 'todas';
 
-    // Filtra primeiro pela loja (mostra itens gerais + exclusivos da unidade)
     let produtosLoja = produtos.filter(p => p.loja === 'todas' || p.loja === lojaAtual);
 
-    // Depois aplica o filtro de categoria (lanches, bebidas, sobremesas)
     let produtosFiltrados = categoria === 'todos' ? [...produtosLoja] : produtosLoja.filter(p => p.categoria === categoria);
 
-    // Ordena os produtos em ordem alfabética (A-Z) pelo nome
     produtosFiltrados.sort((a, b) => a.nome.localeCompare(b.nome));
 
     produtosFiltrados.forEach(produto => {

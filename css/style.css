@@ -156,7 +156,6 @@ body {
     background-color: #5a6268; 
 }
 
-/* NOVO: Grupo de botões dividindo a tela 50/50 na tela de pagamento */
 .botoes-acao {
     display: flex;
     gap: 1rem;
@@ -164,7 +163,7 @@ body {
     width: 100%;
 }
 .botoes-acao button {
-    flex: 1; /* Ocupam exatamente o mesmo espaço */
+    flex: 1;
     padding: 1rem 0.5rem; 
     font-size: 1rem;
     white-space: normal;
@@ -460,15 +459,14 @@ body {
     }
 
     .btn-ver-sacola {
-        padding: 0.35rem 0.5rem; /* Diminui um pouco o preenchimento interno */
-        font-size: 0.75rem; /* Reduz a fonte levemente para caber todo o texto */
-        max-width: 85%; /* Aumenta o limite de largura de 70% para 85% */
+        padding: 0.35rem 0.5rem; 
+        font-size: 0.75rem;
+        max-width: 85%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    /* Correção: Forçar o layout em grid com 2 colunas para nunca quebrar para uma 3ª linha */
     .abas-categorias { 
         display: grid;
         grid-template-columns: 1fr 1fr;
